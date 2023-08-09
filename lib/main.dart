@@ -54,8 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(
+              height: 30,
+            ),
             Text(
               'Krishna\'s Power',
               style: Theme.of(context).textTheme.headlineLarge,
