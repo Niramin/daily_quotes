@@ -44,46 +44,81 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _showRandomLikedPoem() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Center(child: Text("Today is $dayOfWeek !")),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Krishna\'s Power',
-              style: Theme.of(context).textTheme.headlineLarge,
+        title: Center(
+          child: Text(
+            dayOfWeek,
+            style: const TextStyle(
+              fontFamily: 'MedievalSharp',
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              ' from Indian Mythology ',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-            Text(
-              'Now I am become Death,\n the destroyer of worlds! ',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-          ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _toggleLike,
-        tooltip: 'Like',
-        child: Icon(icon),
+      body: LayoutBuilder(
+        builder: (context, constraints) => ListView(children: [
+          Container(
+            padding: const EdgeInsets.all(20.0),
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+            ),
+            child: Column(
+              children: <Widget>[
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Krishna\'s Power',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  ' from Indian Mythology ',
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                Text(
+                  'Now I am become Death,\n the destroyer of worlds!',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+              ],
+            ),
+          )
+        ]),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: _toggleLike,
+            tooltip: 'Like',
+            child: Icon(icon),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          FloatingActionButton(
+            onPressed: _showRandomLikedPoem,
+            tooltip: 'Like',
+            child: const Icon(Icons.shuffle),
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
