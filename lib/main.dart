@@ -44,6 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _showRandomLikedPoem() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
@@ -90,10 +94,23 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _toggleLike,
-        tooltip: 'Like',
-        child: Icon(icon),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: _toggleLike,
+            tooltip: 'Like',
+            child: Icon(icon),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          FloatingActionButton(
+            onPressed: _showRandomLikedPoem,
+            tooltip: 'Like',
+            child: const Icon(Icons.shuffle),
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
