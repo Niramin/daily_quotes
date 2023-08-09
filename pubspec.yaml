@@ -92,3 +92,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: MedievalSharp
+      fonts:
+        - asset: assets/fonts/MedievalSharp-Regular.ttf
+        
+      
+  

@@ -54,7 +54,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Center(child: Text("Today is $dayOfWeek !")),
+        title: Center(
+          child: Text(
+            dayOfWeek,
+            style: const TextStyle(
+              fontFamily: 'MedievalSharp',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => ListView(children: [
