@@ -53,16 +53,16 @@ class _MyHomePageState extends State<MyHomePage> {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
     return Scaffold(
       //bg color
-      backgroundColor: Colors.lightGreen.shade300,
+      backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
+        backgroundColor: Colors.brown.shade600,
         title: Center(
           child: Text(
             dayOfWeek,
             style: const TextStyle(
               fontFamily: 'MedievalSharp',
               fontWeight: FontWeight.bold,
-              color: Colors.amberAccent,
+              color: Colors.limeAccent,
             ),
           ),
         ),
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 Card(
                   //card color
-                  color: Colors.brown.shade400,
+                  color: Colors.pink.shade100,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 30.0),
                     child: Column(
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               .displayMedium
                               ?.copyWith(
                                   fontFamily: 'Satisfy',
-                                  color: Colors.limeAccent),
+                                  color: Color.fromARGB(255, 4, 23, 95)),
                         ),
                         const SizedBox(
                           height: 10,
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall
-                              ?.copyWith(color: Colors.limeAccent),
+                              ?.copyWith(color: Color.fromARGB(255, 4, 23, 95)),
                         ),
                       ],
                     ),
@@ -110,9 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 60,
                 ),
                 Text(
-                  'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
+                    'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineSmall
+                        ?.copyWith(fontFamily: 'Nunito Sans')),
                 const SizedBox(
                   height: 60,
                 ),
