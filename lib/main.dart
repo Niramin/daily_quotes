@@ -70,26 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => ListView(children: [
-          Stack(
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/cloud.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Center(
-                child: Container(
-                  padding: const EdgeInsets.all(20.0),
-                  constraints: BoxConstraints(
-                    minHeight: constraints.maxHeight,
-                  ),
-                  child: PoemWithTitle(),
-                ),
-              )
-            ],
+          Container(
+            padding: const EdgeInsets.all(20.0),
+            constraints: BoxConstraints(
+              minHeight: constraints.maxHeight,
+            ),
+            child: PoemWithTitle(),
           ),
         ]),
       ),
@@ -168,7 +154,6 @@ class PoemWithTitle extends StatelessWidget {
         const SizedBox(
           height: 60,
         ),
-        Image.asset('assets/images/cloud.png'),
       ],
     );
   }
