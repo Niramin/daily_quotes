@@ -52,8 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
     return Scaffold(
+      //bg color
+      backgroundColor: Colors.lightGreen.shade300,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onSurfaceVariant,
+        backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
         title: Center(
           child: Text(
             dayOfWeek,
@@ -75,6 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: <Widget>[
                 Card(
+                  //card color
+                  color: Colors.brown.shade400,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 30.0),
                     child: Column(
@@ -84,14 +88,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium
-                              ?.copyWith(fontFamily: 'Satisfy'),
+                              ?.copyWith(
+                                  fontFamily: 'Satisfy',
+                                  color: Colors.limeAccent),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         Text(
                           'Indian Mythology',
-                          style: Theme.of(context).textTheme.headlineSmall,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(color: Colors.limeAccent),
                         ),
                       ],
                     ),
@@ -101,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 60,
                 ),
                 Text(
-                  'Now I am become Death,\n the destroyer of worlds!',
+                  'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(
@@ -118,14 +127,18 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             onPressed: _toggleLike,
             tooltip: 'Like',
+            backgroundColor: Colors.brown.shade400,
+            foregroundColor: Colors.limeAccent,
             child: Icon(icon),
           ),
           const SizedBox(
-            width: 10,
+            width: 70,
           ),
           FloatingActionButton(
             onPressed: _showRandomLikedPoem,
-            tooltip: 'Like',
+            tooltip: 'Shuffle',
+            backgroundColor: Colors.brown.shade400,
+            foregroundColor: Colors.limeAccent,
             child: const Icon(Icons.shuffle),
           ),
         ],
