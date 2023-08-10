@@ -53,13 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.onSurfaceVariant,
         title: Center(
           child: Text(
             dayOfWeek,
             style: const TextStyle(
               fontFamily: 'MedievalSharp',
               fontWeight: FontWeight.bold,
+              color: Colors.amberAccent,
             ),
           ),
         ),
@@ -73,19 +74,28 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Column(
               children: <Widget>[
-                const SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Krishna\'s Power',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  ' from Indian Mythology ',
-                  style: Theme.of(context).textTheme.headlineSmall,
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 30.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Krishna\'s Power',
+                          style: Theme.of(context)
+                              .textTheme
+                              .displayMedium
+                              ?.copyWith(fontFamily: 'Satisfy'),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Indian Mythology',
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 60,
