@@ -47,6 +47,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  lit_starfield: ^0.1.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -96,6 +97,14 @@ flutter:
     - family: MedievalSharp
       fonts:
         - asset: assets/fonts/MedievalSharp-Regular.ttf
+
+    - family: Satisfy
+      fonts:
+        - asset: assets/fonts/Satisfy-Regular.ttf
+    
+    - family: Nunito Sans
+      fonts:
+        - asset: assets/fonts/NunitoSans_7pt_Expanded-ExtraLight.ttf
         
       
   
