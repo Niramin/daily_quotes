@@ -146,7 +146,7 @@ class PoemWithTitle extends StatelessWidget {
           height: 60,
         ),
         Text(
-            'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
+            'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall
