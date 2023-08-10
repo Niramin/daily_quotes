@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:lit_starfield/lit_starfield.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,52 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             constraints: BoxConstraints(
               minHeight: constraints.maxHeight,
             ),
-            child: Column(
-              children: <Widget>[
-                Card(
-                  //card color
-                  color: Colors.pink.shade100,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 30.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Krishna\'s Power',
-                          style: Theme.of(context)
-                              .textTheme
-                              .displayMedium
-                              ?.copyWith(
-                                  fontFamily: 'Satisfy',
-                                  color: Color.fromARGB(255, 4, 23, 95)),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Indian Mythology',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall
-                              ?.copyWith(color: Color.fromARGB(255, 4, 23, 95)),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 60,
-                ),
-                Text(
-                    'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineSmall
-                        ?.copyWith(fontFamily: 'Nunito Sans')),
-                const SizedBox(
-                  height: 60,
-                ),
-              ],
-            ),
+            child: PoemWithTitle(),
           )
         ]),
       ),
@@ -146,6 +102,59 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+class PoemWithTitle extends StatelessWidget {
+  const PoemWithTitle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Card(
+          //card color
+          color: Colors.pink.shade100,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 30.0),
+            child: Column(
+              children: [
+                Text(
+                  'Krishna\'s Power',
+                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      fontFamily: 'Satisfy',
+                      color: Color.fromARGB(255, 4, 23, 95)),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Indian Mythology',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall
+                      ?.copyWith(color: Color.fromARGB(255, 4, 23, 95)),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 60,
+        ),
+        Text(
+            'Now I am become Death,\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!\n the destroyer of worlds!',
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall
+                ?.copyWith(fontFamily: 'Nunito Sans')),
+        const SizedBox(
+          height: 60,
+        ),
+      ],
     );
   }
 }
