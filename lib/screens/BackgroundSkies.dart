@@ -68,19 +68,27 @@ class Clouds extends StatefulWidget {
 }
 
 class _CloudsState extends State<Clouds> {
-  var cur_x = 0;
-  var cur_y = 51;
+  double cur_x = 0.0;
+  double cur_y = 51.0;
   @override
   Widget build(BuildContext context) {
-    return Positioned(
+    return AnimatedPositioned(
+      duration: const Duration(seconds: 2),
       width: 50.0,
       height: 200.0,
       top: 51,
-      left: 0,
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/cloud.png"),
+      left: cur_x,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            cur_x += 10.0;
+          });
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/cloud.png"),
+            ),
           ),
         ),
       ),
