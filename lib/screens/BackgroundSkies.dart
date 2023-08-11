@@ -9,6 +9,7 @@ class MorningSky extends StatelessWidget {
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
     return Scaffold(
+      backgroundColor: Colors.blue.shade200,
       appBar: AppBar(
         title: Center(
             child: Text(
@@ -20,7 +21,16 @@ class MorningSky extends StatelessWidget {
           ),
         )),
       ),
-      body: Container(),
+      body: Stack(
+        children: [
+          Clouds(),
+          Center(
+            child: Text(
+              "Sample Text\nSample Text\nSample Text\nSample Text\nSample Text\n",
+            ),
+          ),
+        ],
+      ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -44,6 +54,36 @@ class MorningSky extends StatelessWidget {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+class Clouds extends StatefulWidget {
+  const Clouds({
+    super.key,
+  });
+
+  @override
+  State<Clouds> createState() => _CloudsState();
+}
+
+class _CloudsState extends State<Clouds> {
+  var cur_x = 0;
+  var cur_y = 51;
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      width: 50.0,
+      height: 200.0,
+      top: 51,
+      left: 0,
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/cloud.png"),
+          ),
+        ),
+      ),
     );
   }
 }
