@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
-import 'package:lit_starfield/lit_starfield.dart';
+import 'package:daily_quotes/screens/BackgroundSkies.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: Container(),
+      home: MorningSky(),
     );
   }
 }
