@@ -134,9 +134,9 @@ class _CloudsState extends State<Clouds> {
 
     return Stack(
       children: [
-        SkyObjectWidget(mycloud: mycloud),
-        SkyObjectWidget(mycloud: mycloud1),
-        SkyObjectWidget(mycloud: mycloud2),
+        if (mycloud.isVisible) SkyObjectWidget(mycloud: mycloud),
+        if (mycloud1.isVisible) SkyObjectWidget(mycloud: mycloud1),
+        if (mycloud2.isVisible) SkyObjectWidget(mycloud: mycloud2),
       ],
     );
   }

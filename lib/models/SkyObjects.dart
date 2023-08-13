@@ -5,9 +5,12 @@ class SkyObject {
   String name = "random";
   bool isVisible = true;
   String image_url = "";
+  String _og_image_url = "";
+  String _empty_image_url = "assets/images/empty.png";
   double height = 100;
   double width = 100;
   //x coordinate and y coordinate
+
   double x = 0;
   double y = 0;
   // let max limits
@@ -16,6 +19,7 @@ class SkyObject {
   double default_traverse_distance = 1;
   SkyObject(String image_urlx) {
     image_url = image_urlx;
+    _og_image_url = image_urlx;
   }
 
   void setVisibiliy(bool value) {
@@ -97,7 +101,7 @@ class SkyObject {
       isVisible = false;
     }
     if (x > screen_x + 20) {
-      x = -50;
+      x = -150;
       y = helper.nextDouble(0, screen_y - 100);
     }
   }
