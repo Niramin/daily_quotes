@@ -134,9 +134,9 @@ class _CloudsState extends State<Clouds> {
 
     return Stack(
       children: [
-        if (mycloud.isVisible) SkyObjectWidget(mycloud: mycloud),
-        if (mycloud1.isVisible) SkyObjectWidget(mycloud: mycloud1),
-        if (mycloud2.isVisible) SkyObjectWidget(mycloud: mycloud2),
+        SkyObjectWidget(mycloud: mycloud),
+        SkyObjectWidget(mycloud: mycloud1),
+        SkyObjectWidget(mycloud: mycloud2),
       ],
     );
   }
@@ -152,14 +152,13 @@ class SkyObjectWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedPositioned(
-      duration: const Duration(seconds: 2),
-      width: mycloud.width,
-      height: mycloud.width,
-      top: mycloud.y,
-      left: mycloud.x,
-      child: Visibility(
-        visible: mycloud.isVisible,
+    if (mycloud.isVisible) {
+      return AnimatedPositioned(
+        duration: const Duration(seconds: 2),
+        width: mycloud.width,
+        height: mycloud.width,
+        top: mycloud.y,
+        left: mycloud.x,
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -167,7 +166,9 @@ class SkyObjectWidget extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
+    } else {
+      return Container();
+    }
   }
 }
