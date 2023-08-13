@@ -19,17 +19,11 @@ class SkyAppState extends ChangeNotifier {
 
   SkyObject cloud2 = SkyObject("assets/images/cloud.png");
 
-  double screen_max_width = 700;
-
-  double screen_max_height = 900;
-
   bool isVisible = true;
   void setMaxXY(double x, double y) {
     cloud0.setScreenLimits(x, y);
     cloud1.setScreenLimits(x, y);
     cloud2.setScreenLimits(x, y);
-    screen_max_height = y;
-    screen_max_width = x;
   }
 
   void traverseLeft(double distance) {
@@ -140,18 +134,9 @@ class _CloudsState extends State<Clouds> {
 
     return Stack(
       children: [
-        Visibility(
-          visible: mycloud.isVisible,
-          child: SkyObjectWidget(mycloud: mycloud),
-        ),
-        Visibility(
-          visible: mycloud1.isVisible,
-          child: SkyObjectWidget(mycloud: mycloud1),
-        ),
-        Visibility(
-          visible: mycloud2.isVisible,
-          child: SkyObjectWidget(mycloud: mycloud2),
-        ),
+        SkyObjectWidget(mycloud: mycloud),
+        SkyObjectWidget(mycloud: mycloud1),
+        SkyObjectWidget(mycloud: mycloud2),
       ],
     );
   }
