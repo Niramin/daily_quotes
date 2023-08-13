@@ -83,7 +83,7 @@ class MorningSky extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.blue.shade200,
         appBar: AppBar(
-          backgroundColor: Colors.grey.shade400,
+          backgroundColor: Colors.pink.shade100,
           title: Center(
               child: Text(
             dayOfWeek,
@@ -110,7 +110,7 @@ class MorningSky extends StatelessWidget {
             FloatingActionButton(
               onPressed: () => {},
               tooltip: 'Like',
-              backgroundColor: Colors.grey.shade400,
+              backgroundColor: Colors.pink.shade100,
               foregroundColor: Colors.limeAccent,
               child: const Icon(Icons.favorite),
             ),
@@ -120,7 +120,7 @@ class MorningSky extends StatelessWidget {
             FloatingActionButton(
               onPressed: () => {},
               tooltip: 'Shuffle',
-              backgroundColor: Colors.grey.shade400,
+              backgroundColor: Colors.pink.shade100,
               foregroundColor: Colors.limeAccent,
               child: const Icon(Icons.shuffle),
             ),
