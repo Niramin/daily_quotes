@@ -42,10 +42,6 @@ class SkyAppState extends ChangeNotifier {
     cloud_dist_from_left += distance;
   }
 
-  void toggleListeningToClock() {
-    listenToClock = !listenToClock;
-  }
-
   //Constructor
   SkyAppState() {
     noOfCloud = next(1, 6);
