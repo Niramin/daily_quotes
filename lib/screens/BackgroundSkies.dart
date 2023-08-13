@@ -46,12 +46,26 @@ class SkyAppState extends ChangeNotifier {
   }
 }
 
-class MorningSky extends StatelessWidget {
+class MorningSky extends StatefulWidget {
   const MorningSky({super.key, required this.mypoem});
   final Poem mypoem;
+
+  @override
+  State<MorningSky> createState() => _MorningSkyState();
+}
+
+class _MorningSkyState extends State<MorningSky> {
+  bool isLike = false;
+
   @override
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
+    IconData icon;
+    if (isLike) {
+      icon = Icons.favorite;
+    } else {
+      icon = Icons.favorite_border;
+    }
 
     return ChangeNotifierProvider(
       create: (context) => SkyAppState(),
@@ -78,7 +92,7 @@ class MorningSky extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                TitleCard(mypoem: mypoem),
+                TitleCard(mypoem: widget.mypoem),
               ],
             ),
           ],
@@ -87,11 +101,15 @@ class MorningSky extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FloatingActionButton(
-              onPressed: () => {},
+              onPressed: () {
+                setState(() {
+                  isLike = !isLike;
+                });
+              },
               tooltip: 'Like',
               backgroundColor: Colors.pink.shade100,
               foregroundColor: Colors.limeAccent,
-              child: Icon(Icons.favorite),
+              child: Icon(icon),
             ),
             const SizedBox(
               width: 70,
