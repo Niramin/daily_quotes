@@ -158,10 +158,13 @@ class SkyObjectWidget extends StatelessWidget {
       height: mycloud.width,
       top: mycloud.y,
       left: mycloud.x,
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(mycloud.image_url),
+      child: Visibility(
+        visible: mycloud.isVisible,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(mycloud.image_url),
+            ),
           ),
         ),
       ),

@@ -98,6 +98,7 @@ class SkyObject {
     }
     if (x > screen_x + 20) {
       x = -50;
+      y = helper.nextDouble(0, screen_y - 100);
     }
   }
 }
