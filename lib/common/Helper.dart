@@ -13,10 +13,9 @@ class SingletonHelper {
 
 abstract class helper {
   static double nextDouble(double min, double max) {
-    print("Inside random: $min $max");
     Random _random = new Random();
     double ans = min + _random.nextDouble() * (max - min);
-    print("ans random: $ans");
+
     return ans;
   }
 }

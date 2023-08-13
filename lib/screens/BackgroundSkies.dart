@@ -1,4 +1,6 @@
+import 'package:daily_quotes/main.dart';
 import 'package:daily_quotes/models/Poem.dart';
+import 'package:daily_quotes/screens/Cards.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart' as intl;
@@ -50,6 +52,7 @@ class MorningSky extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
+
     return ChangeNotifierProvider(
       create: (context) => SkyAppState(),
       child: Scaffold(
@@ -70,10 +73,13 @@ class MorningSky extends StatelessWidget {
         body: Stack(
           children: [
             Clouds(),
-            Center(
-              child: Text(
-                mypoem.content,
-              ),
+            ListView(
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                TitleCard(mypoem: mypoem),
+              ],
             ),
           ],
         ),
@@ -85,7 +91,7 @@ class MorningSky extends StatelessWidget {
               tooltip: 'Like',
               backgroundColor: Colors.pink.shade100,
               foregroundColor: Colors.limeAccent,
-              child: const Icon(Icons.favorite),
+              child: Icon(Icons.favorite),
             ),
             const SizedBox(
               width: 70,
