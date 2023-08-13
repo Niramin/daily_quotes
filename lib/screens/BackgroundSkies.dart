@@ -1,3 +1,4 @@
+import 'package:daily_quotes/models/Poem.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart' as intl;
@@ -44,8 +45,8 @@ class SkyAppState extends ChangeNotifier {
 }
 
 class MorningSky extends StatelessWidget {
-  const MorningSky({super.key});
-
+  const MorningSky({super.key, required this.mypoem});
+  final Poem mypoem;
   @override
   Widget build(BuildContext context) {
     var dayOfWeek = intl.DateFormat('EEEE').format(DateTime.now());
@@ -71,7 +72,7 @@ class MorningSky extends StatelessWidget {
             Clouds(),
             Center(
               child: Text(
-                "Sample Text\nSample Text\nSample Text\nSample Text\nSample Text\n",
+                mypoem.content,
               ),
             ),
           ],
