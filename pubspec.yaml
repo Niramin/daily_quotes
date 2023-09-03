@@ -107,6 +107,10 @@ flutter:
     - family: Nunito Sans
       fonts:
         - asset: assets/fonts/NunitoSans_7pt_Expanded-ExtraLight.ttf
+
+    - family: PoppinsLight
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
         
       
   
