@@ -1,6 +1,7 @@
 import 'package:daily_quotes/main.dart';
 import 'package:daily_quotes/models/Poem.dart';
 import 'package:daily_quotes/screens/Cards.dart';
+import 'package:daily_quotes/screens/PoemContentDisplay.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart' as intl;
@@ -86,13 +87,22 @@ class _MorningSkyState extends State<MorningSky> {
         ),
         body: Stack(
           children: [
-            Clouds(),
+            const Clouds(),
             ListView(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 TitleCard(mypoem: widget.mypoem),
+                const SizedBox( height: 40,),
+                const Image(
+                  image: AssetImage("assets/images/topBorder.png"),
+                ),
+                PoemContent(widget: widget),
+                const Image(
+                  image: AssetImage("assets/images/bottomBorder.png"),
+                ),
+                const SizedBox( height: 70,),
               ],
             ),
           ],
@@ -128,6 +138,8 @@ class _MorningSkyState extends State<MorningSky> {
     );
   }
 }
+
+
 
 class Clouds extends StatefulWidget {
   const Clouds({

@@ -24,7 +24,7 @@ class TitleCard extends StatelessWidget {
                     Text(
                       mypoem.title,
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 35,
                         fontFamily: "Satisfy",
                         fontWeight: FontWeight.bold,
                       ),

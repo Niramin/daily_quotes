@@ -14,7 +14,7 @@ class SampleRepo implements irepository {
     // add time delay to simulate and test loading?
     Poem newPoem = Poem(
         title: "Krishna's Wrath",
-        content: "Now, I am become Death \n the Destroyer of Worlds!",
+        content: "Now, I am become Death \nthe Destroyer of Worlds!Hey Arjuna,\n whenever dharma falls in society leading to the rise of adharma,\n I will interfere to restore dharma\nNow, I am become Death \nthe Destroyer of Worlds!\nHey Arjuna, whenever dharma falls in society leading to the rise of adharma,\n I will interfere to restore dharma",
         id: 0,
         author: "from Indian Mythology");
 
