@@ -18,13 +18,26 @@ class TitleCard extends StatelessWidget {
           child: Column(
             children: [
               Center(
-                child: Text(
-                  mypoem.title,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: "Satisfy",
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 5,),
+                    Text(
+                      mypoem.title,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontFamily: "Satisfy",
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 5,),
+                    Text(
+                      mypoem.author,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 5,),
+                  ],
                 ),
               ),
             ],

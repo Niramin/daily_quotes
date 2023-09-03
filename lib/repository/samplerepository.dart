@@ -13,7 +13,7 @@ class SampleRepo implements irepository {
     // for now generating sample poem
     // add time delay to simulate and test loading?
     Poem newPoem = Poem(
-        title: "Krishna's Wrath ",
+        title: "Krishna's Wrath",
         content: "Now, I am become Death \n the Destroyer of Worlds!",
         id: 0,
         author: "from Indian Mythology");
