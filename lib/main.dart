@@ -1,3 +1,4 @@
+import 'package:daily_quotes/repository/PoemRepository.dart';
 import 'package:daily_quotes/repository/irepository.dart';
 import 'package:daily_quotes/repository/samplerepository.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    irepository poemRepo = SampleRepo();
+    irepository poemRepo = PoemRepo();
     return MaterialApp(
       title: 'Daily Quotes',
       theme: ThemeData(
