@@ -20,4 +20,10 @@ class SampleRepo implements irepository {
 
     return newPoem;
   }
+  
+  @override
+  Future<Poem> getRandomPoemAsync() {
+    // TODO: implement getRandomPoemAsync
+    throw UnimplementedError();
+  }
 }

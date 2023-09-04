@@ -18,13 +18,35 @@ class PoemRepo implements irepository {
   }
   PoemRepo._internal();
 
+
+  Future<String> loadAsset() async {
+    String fileText = await rootBundle.loadString('assets/poems/p0');
+    return fileText;
+    
+  }
+
   @override
   Poem getRandomPoem() {
     // for now generating sample poem
     // add time delay to simulate and test loading?
+    
+
     Poem newPoem = Poem(
         title: "Krishna's Wrath",
         content: "Now, I am become Death \nthe Destroyer of Worlds!Hey Arjuna,\n whenever dharma falls in society leading to the rise of adharma,\n I will interfere to restore dharma\nNow, I am become Death \nthe Destroyer of Worlds!\nHey Arjuna, whenever dharma falls in society leading to the rise of adharma,\n I will interfere to restore dharma",
+        id: 0,
+        author: "from Indian Mythology");
+
+    return newPoem;
+  }
+
+  @override
+  Future<Poem> getRandomPoemAsync()
+  async {
+      String poemContent =  await loadAsset();
+          Poem newPoem = Poem(
+        title: "Krishna's Wrath",
+        content: poemContent,
         id: 0,
         author: "from Indian Mythology");
 
