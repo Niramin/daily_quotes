@@ -45,10 +45,10 @@ class PoemRepo implements irepository {
   async {
       String poemContent =  await loadAsset();
           Poem newPoem = Poem(
-        title: "Krishna's Wrath",
+        title: "The Road Not Taken",
         content: poemContent,
         id: 0,
-        author: "from Indian Mythology");
+        author: "by Robert Frost");
 
     return newPoem;
   }
