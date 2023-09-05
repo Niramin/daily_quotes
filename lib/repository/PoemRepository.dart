@@ -19,8 +19,8 @@ class PoemRepo implements irepository {
   PoemRepo._internal();
 
 
-  Future<String> loadAsset() async {
-    String fileText = await rootBundle.loadString('assets/poems/p0');
+  Future<String> loadAsset({int poemid=0}) async {
+    String fileText = await rootBundle.loadString('assets/poems/p$poemid');
     return fileText;
     
   }
@@ -43,12 +43,14 @@ class PoemRepo implements irepository {
   @override
   Future<Poem> getRandomPoemAsync()
   async {
-      String poemContent =  await loadAsset();
-          Poem newPoem = Poem(
-        title: "The Road Not Taken",
-        content: poemContent,
-        id: 0,
-        author: "by Robert Frost");
+      int id =0;
+      String poemFile =  await loadAsset(poemid:id);
+        var poemLines = poemFile.split("\n");
+        Poem newPoem = Poem(
+        title: poemLines[0],
+        content: poemLines.sublist(2,poemLines.length).join("\n"),
+        id: id,
+        author: poemLines[1]);
 
     return newPoem;
   }
