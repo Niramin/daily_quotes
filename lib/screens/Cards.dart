@@ -21,12 +21,16 @@ class TitleCard extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 5,),
-                    Text(
-                      mypoem.title,
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontFamily: "Satisfy",
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        mypoem.title,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 35,
+                          fontFamily: "Satisfy",
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     SizedBox(height: 5,),
