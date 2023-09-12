@@ -33,7 +33,7 @@ class TitleCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 2,),
                     Text(
                       mypoem.author,
                       style: TextStyle(
