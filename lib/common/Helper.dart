@@ -18,4 +18,10 @@ abstract class helper {
 
     return ans;
   }
+  static int next(int min, int max) {
+
+    Random _random = new Random();
+
+    return min + _random.nextInt(max - min);
+  }
 }

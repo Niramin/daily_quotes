@@ -1,3 +1,5 @@
+import 'package:daily_quotes/models/Poem.dart';
+import 'package:daily_quotes/repository/PoemRepository.dart';
 import 'package:daily_quotes/repository/irepository.dart';
 import 'package:daily_quotes/repository/samplerepository.dart';
 import 'package:flutter/material.dart';
@@ -8,20 +10,43 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+
+  Poem _poem = Poem();
+   irepository poemRepo = PoemRepo();
+
+   @override
+  void initState() {
+    super.initState();
+    loadAsset();
+    
+  }
+  
+  Future<void> loadAsset() async {
+    Poem tpoem = await poemRepo.getRandomPoemAsync();
+    setState(() {
+      _poem = tpoem;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    irepository poemRepo = SampleRepo();
+    //loadAsset();
     return MaterialApp(
       title: 'Daily Quotes',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: MorningSky(mypoem: poemRepo.getRandomPoem()),
+      home: MorningSky(mypoem: _poem),
     );
   }
 }
