@@ -1,5 +1,6 @@
 import 'package:daily_quotes/main.dart';
 import 'package:daily_quotes/models/Poem.dart';
+import 'package:daily_quotes/repository/PoemRepository.dart';
 import 'package:daily_quotes/screens/Cards.dart';
 import 'package:daily_quotes/screens/PoemContentDisplay.dart';
 import 'package:flutter/material.dart';
@@ -57,6 +58,7 @@ class MorningSky extends StatefulWidget {
 
 class _MorningSkyState extends State<MorningSky> {
   bool isLike = false;
+  Poems poemRepo = Poems();
 
   @override
   Widget build(BuildContext context) {

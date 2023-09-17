@@ -21,16 +21,16 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
 
   Poem _poem = Poem();
-   irepository poemRepo = PoemRepo();
+   irepository poemRepo = Poems();
 
    @override
   void initState() {
     super.initState();
-    loadAsset();
+    loadPoem();
     
   }
   
-  Future<void> loadAsset() async {
+  Future<void> loadPoem() async {
     Poem tpoem = await poemRepo.getRandomPoemAsync();
     setState(() {
       _poem = tpoem;
