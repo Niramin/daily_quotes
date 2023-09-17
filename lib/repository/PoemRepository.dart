@@ -12,12 +12,12 @@ Future<String> loadAsset({String poemid="p0"}) async {
 
 
 
-class PoemRepo implements irepository {
-  static final PoemRepo _singleton = PoemRepo._internal();
-  factory PoemRepo() {
+class Poems implements irepository {
+  static final Poems _singleton = Poems._internal();
+  factory Poems() {
     return _singleton;
   }
-  PoemRepo._internal();
+  Poems._internal();
 
 
   Future<String> loadAsset({int poemid=0}) async {
