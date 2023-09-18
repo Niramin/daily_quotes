@@ -90,23 +90,7 @@ class _MorningSkyState extends State<MorningSky> {
         body: Stack(
           children: [
             const Clouds(),
-            ListView(
-              children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                TitleCard(mypoem: widget.mypoem),
-                const SizedBox( height: 40,),
-                const Image(
-                  image: AssetImage("assets/images/topBorder.png"),
-                ),
-                PoemContent(widget: widget),
-                const Image(
-                  image: AssetImage("assets/images/bottomBorder.png"),
-                ),
-                const SizedBox( height: 70,),
-              ],
-            ),
+            FrontDisplay(widget: widget),
           ],
         ),
         floatingActionButton: Row(
@@ -137,6 +121,38 @@ class _MorningSkyState extends State<MorningSky> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
+    );
+  }
+}
+
+class FrontDisplay extends StatelessWidget {
+  const FrontDisplay({
+    super.key,
+    required this.widget,
+    
+  });
+
+  final MorningSky widget;
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        const SizedBox(
+          height: 40,
+        ),
+        TitleCard(mypoem: widget.mypoem),
+        const SizedBox( height: 40,),
+        const Image(
+          image: AssetImage("assets/images/topBorder.png"),
+        ),
+        PoemContent(widget: widget),
+        const Image(
+          image: AssetImage("assets/images/bottomBorder.png"),
+        ),
+        const SizedBox( height: 70,),
+      ],
     );
   }
 }
